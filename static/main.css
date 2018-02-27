@@ -1,0 +1,8 @@
+#app{
+    background-image: url(../src/assets/bg.jpg);
+    margin-top: 0px !important; 
+}
+
+a {
+    color: black;
+}
