@@ -2,23 +2,18 @@
     background-image: url(../src/assets/bg.jpg);
     margin-top: 0px !important; 
 }
-/* unvisited link */
 a:link {
     color: #1d2124;
 }
 
-/* visited link */
 a:visited {
     color: #ced4da;
 }
 
-/* mouse over link */
 a:hover {
     color: #d39e00;
     text-decoration: none
 }
-
-/* selected link */
 a:active {
     color: #ffc107;
 }
