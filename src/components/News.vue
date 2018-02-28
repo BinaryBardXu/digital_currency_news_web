@@ -23,7 +23,7 @@ export default {
 
   // Fetches posts when the component is created.
   created () {
-    axios.get(`/api/news`)
+    axios.get(`/api/v1.0/news`)
       .then(response => {
       // JSON responses are automatically parsed.
         this.newsList = response.data
