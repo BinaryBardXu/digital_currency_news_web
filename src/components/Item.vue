@@ -29,7 +29,7 @@ export default {
     background:rgba(0,0,0,0.7);
     color:  white;
     height: 65px;
-    min-width:  99px;
+    min-width:  120px;
     line-height:  65px;
 }
 
