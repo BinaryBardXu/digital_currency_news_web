@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       tickers: [],
-      ethereumTicker: {},
+      time: 60 * 30,
       errors: []
     }
   },
