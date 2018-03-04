@@ -21,7 +21,7 @@ export default {
 .item {
   height: 100%;
   line-height: 50px;
-  padding-left: 20px;
+  padding-left: 15px;
   border-bottom: 1px solid #eee;
 }
 .site-name {

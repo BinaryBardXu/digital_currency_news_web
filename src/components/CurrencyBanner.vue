@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     loadCurrencyMarket: function () {
+      this.tickers = []
       axios.get(`https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CNY`)
         .then(response => {
           this.tickers.push(response.data[0])
