@@ -1,37 +1,40 @@
 <template>
-        <div class="news-list">
-          <b-list-group>
-            <item v-for="(news,index) of newsList" :key="index" v-bind:news="news"></item>
+  <div>
+    <CurrencyBanner></CurrencyBanner>
+      <div class="news-list">
+        <b-list-group>
+          <item v-for="(news,index) of newsList" :key="index" v-bind:news="news"></item>
             </b-list-group>
         </div>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
-import item from "./Item";
-
-import virtualList from "vue-virtual-scroll-list";
+import axios from 'axios'
+import item from './Item'
+import virtualList from 'vue-virtual-scroll-list'
+import CurrencyBanner from './CurrencyBanner'
 
 export default {
-  data() {
+  data () {
     return {
       newsList: [],
       errors: []
-    };
+    }
   },
-  components: { item, "virtual-list": virtualList },
+  components: { item, 'virtual-list': virtualList, CurrencyBanner },
 
   // Fetches posts when the component is created.
-  created() {
+  created () {
     axios
-      .get(`/api/v1.0/news`)
+      .get(`api/v1.0/news`)
       .then(response => {
         // JSON responses are automatically parsed.
-        this.newsList = response.data;
+        this.newsList = response.data
       })
       .catch(e => {
-        this.errors.push(e);
-      });
+        this.errors.push(e)
+      })
 
     // async / await version (created() becomes async created())
     //
@@ -42,13 +45,14 @@ export default {
     //   this.errors.push(e)
     // }
   }
-};
+}
 </script>
 <style>
 .news-list {
   height: 100%;
   width: 65%;
   margin: auto;
+  padding-top: 30px;
 }
 .list-group-item {
   background-color: transparent !important;
