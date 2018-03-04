@@ -21,7 +21,7 @@ export default {
 .item {
   height: 100%;
   line-height: 50px;
-  padding-left: 15px;
+  padding-left: 20px;
   border-bottom: 1px solid #eee;
 }
 .site-name {
@@ -44,7 +44,7 @@ export default {
 
 span.new-title {
     color: black;
-    font-size: 20px;
+    font-size: 15px;
     float:  left;
     width: 100%;
     text-align:  left;
