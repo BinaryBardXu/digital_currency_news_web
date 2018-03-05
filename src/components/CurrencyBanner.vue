@@ -1,7 +1,7 @@
 <template>
         <div class="currency-banner">
           <div class='currency-market' v-for="(ticker,index) of tickers" :key="index">
-            <span>币种:{{ ticker.symbol }}</span>
+            <span>币种:<a target="_blank" :href="ticker.linkToHuobi">{{ ticker.symbol }}</a></span>
             <span>美元:${{ ticker.price_usd }}</span>
             <span>人民币:{{ ticker.price_cny }}</span>
             <span>1小时涨幅:<span  v-bind:class="{ 'amount-increase': ticker.percent_change_1h > 0, 'amount-decrease': ticker.percent_change_1h < 0 }">{{ ticker.percent_change_1h }}</span></span>
@@ -32,6 +32,7 @@ export default {
       this.tickers = []
       axios.get(`https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=CNY`)
         .then(response => {
+          response.data[0].linkToHuobi = 'https://www.huobi.pro/zh-cn/btc_usdt/exchange/'
           this.tickers.push(response.data[0])
         })
         .catch(e => {
@@ -39,6 +40,7 @@ export default {
         })
       axios.get(`https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=CNY`)
         .then(response => {
+          response.data[0].linkToHuobi = 'https://www.huobi.pro/zh-cn/eth_usdt/exchange/'
           this.tickers.push(response.data[0])
         })
         .catch(e => {
@@ -53,6 +55,10 @@ export default {
 }
 </script>
 <style>
+.currency-banner a {
+    color: black
+}
+
 .currency-banner {
     background-color:  white;
     width: 100%;
