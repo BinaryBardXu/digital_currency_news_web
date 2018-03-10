@@ -44,7 +44,7 @@ export default {
 
 span.new-title {
     color: black;
-    font-size: 15px;
+    font-size: 20px;
     float:  left;
     width: 100%;
     text-align:  left;
