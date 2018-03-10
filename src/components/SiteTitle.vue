@@ -38,7 +38,7 @@ export default {
 }
 
 span.new-title {
-    color: black;
+    color: red;
     font-size: 20px;
     float:  left;
     width: 100%;
